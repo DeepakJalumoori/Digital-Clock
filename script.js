@@ -6,7 +6,7 @@ function updateClock() {
   const timeFormat = hours >= 12 ? 'PM' : 'AM';
   hours = hours % 12 || 12;
   const format = (n) => (n < 10 ? '0' + n : n);
-  const timeString = `${format(hours)}:${format(minutes)}:${format(seconds)} ${ampm}`;
+  const timeString = `${format(hours)}:${format(minutes)}:${format(seconds)} ${timeFormat}`;
   const dateString = now.toDateString();
   document.getElementById('time').textContent = timeString;
   document.getElementById('date').textContent = dateString;
