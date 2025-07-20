@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.clock-container {
+  text-align: center;
+  padding: 30px;
+  border-radius: 12px;
+  
+}
+
+#time {
+  font-size: 50px;
+  margin-bottom: 10px;
+  font-weight: 400;           
+  letter-spacing: 2px;        
+}
+
+#date {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Toggle Switch */
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(155, 10, 10);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #0a0200;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+#theme-label {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #000;
+  color: #faf8f8;
+}
+
+body.dark .clock-container {
+  box-shadow: 0 0 20px #f32201;
+}
+
+/* Light Theme */
+body.light {
+  background-color: #f1f1f1;
+  color: #111;
+  
+}
+
+body.light .clock-container {
+  box-shadow: 0 0 15px rgba(0, 11, 9, 0.5);
+}
