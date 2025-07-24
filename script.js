@@ -1,12 +1,12 @@
 function updateClock() {
   const now = new Date();
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  let seconds = now.getSeconds();
-  const timeFormat = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12 || 12;
-  const format = (n) => (n < 10 ? '0' + n : n);
-  const timeString = `${format(hours)}:${format(minutes)}:${format(seconds)} ${timeFormat}`;
+    const timeString = now.toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true, 
+  });
+
   const dateString = now.toDateString();
   document.getElementById('time').textContent = timeString;
   document.getElementById('date').textContent = dateString;
